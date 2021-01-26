@@ -49,6 +49,7 @@ export default function Home() {
 
       
       {isLargerThan520 ?
+
         <Container
           minWidth="100%"
           minHeight="100vh"
@@ -58,6 +59,8 @@ export default function Home() {
           flexDirection="column"
           justifyContent="flex-start"
           alignItems="flex-start"
+          mt="10px"
+            mb="15px"
         >
           <Container
             minWidth="80%"
@@ -69,6 +72,7 @@ export default function Home() {
             justifyContent="center"
             alignItems="space-between"
             pt="20px">
+              
             <Container
               display="flex"
               flexDirection="row"
