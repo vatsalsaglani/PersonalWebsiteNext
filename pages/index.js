@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+// import '../styles/globals.css'
 import {
   ChakraProvider,
   Container,
@@ -13,8 +14,6 @@ import {
   DrawerContent,
   Drawer,
   IconButton,
-
-
 } from '@chakra-ui/react'
 
 import { HamburgerIcon } from '@chakra-ui/icons'
@@ -41,7 +40,7 @@ export default function Home() {
   }
 
   return (
-    <ChakraProvider resetCSS>
+    <ChakraProvider>
       <Head>
         <title>Vatsal Saglani</title>
       </Head>
@@ -49,27 +48,35 @@ export default function Home() {
         minWidth="100%"
         minHeight="100vh"
         overflow="hidden"
-        backgroundColor="#f9f9f9"
+        backgroundColor="#171b92"
         display="flex"
         flexDirection="column"
         justifyContent="flex-start"
         alignItems="flex-start"
+        color="white"
       >
-        <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
-          <DrawerOverlay>
-            <DrawerContent>
-              <Button>
-                About
-        </Button>
-              <Button>
-                Blogs
-        </Button>
-              <Button>
-                Projects
-        </Button>
-              <Button>
-                Contact
-        </Button>
+        <Drawer backgroundColor="#171b92" placement={placement} onClose={onClose} isOpen={isOpen} backgroundColor="#ffffff">
+          <DrawerOverlay >
+            <DrawerContent backgroundColor="#171b92" color = "white">
+              <Button 
+              mt='10px' 
+              mb='10px' 
+              backgroundColor="#171b92"
+              >
+                <Link>About</Link>
+              </Button>
+              <Button mt='10px' mb='10px' backgroundColor="#171b92">
+                <Link>Blogs</Link>
+              </Button>
+              <Button mt='10px' mb='10px' backgroundColor="#171b92">
+                <Link>
+                  Projects
+                </Link>
+              </Button>
+              <Button mt='10px' mb='10px' backgroundColor="#171b92">
+                <Link href='/contact'>Contact</Link>
+
+              </Button>
             </DrawerContent>
           </DrawerOverlay>
         </Drawer>
@@ -77,7 +84,7 @@ export default function Home() {
         {isLargerThan520 ? <Container
           minWidth="80%"
           mt="10px"
-          mb="15px"
+          mb="25px"
           display="flex"
           border="1px black"
           borderRadius="2px"
@@ -90,8 +97,11 @@ export default function Home() {
             aria-label="icon"
             icon={<HamburgerIcon />}
             size="lg"
-            variant="outline"
-            colorScheme="twitter"
+            // variant="outline"
+            // colorScheme="twitter"
+            variant='ghost'
+            boxShadow="6px -6px 12px #101365,
+            -6px 6px 12px #1e23bf"
             onClick={onOpen}
           />
           <Container
@@ -110,7 +120,7 @@ export default function Home() {
             <Container
               minWidth="80%"
               mt="10px"
-              mb="15px"
+              mb="25px"
               display="flex"
               border="1px black"
               borderRadius="2px"
@@ -123,8 +133,10 @@ export default function Home() {
                 aria-label="icon"
                 icon={<HamburgerIcon />}
                 size="lg"
-                variant="outline"
-                colorScheme="twitter"
+                variant='ghost'
+                boxShadow="6px -6px 12px #101365,
+            -6px 6px 12px #1e23bf"
+                // colorScheme="twitter"
                 onClick={onOpen}
               /></Container>
             <Container
@@ -133,7 +145,7 @@ export default function Home() {
               flexDirection="row"
               justifyContent="center"
               alignItems="center"
-              pt = "20px"
+              pt="20px"
             >
               <Text textAlign="justify" fontSize="2xl" letterSpacing="wider">
                 Hey there, my name is Vatsal
@@ -152,6 +164,8 @@ export default function Home() {
           minHeight="70vh"
           justifyContent="center"
           alignItems="center"
+          mt="20px"
+
         >
           <Container
             minHeight="inherit"
@@ -159,6 +173,10 @@ export default function Home() {
             flexDirection="column"
             justifyContent="flex-start"
             alignItems="stretch"
+            pb='20px'
+            boxShadow="23px 23px 0px #131676, -23px -23px 0px #1b20ae"
+            borderRadius="10px"
+            pt="20px"
           >
             <Text
               fontSize="md"
@@ -187,42 +205,51 @@ export default function Home() {
               Computer Vision, Natural Language Processing, and Time Series
               analysis.
           </Text>
-          <Text mb="2px" mt="25px" textAlign="justify" color = 'red'>
-                {msg}
-              </Text>
+            <Text mb="2px" mt="25px" textAlign="justify" color='red'>
+              {msg}
+            </Text>
             <Container
               display="flex"
               flexDirection="row"
               justifyContent="center"
               alignItems="center"
               mt="15px"
+              pb="20px"
             >
-             
+
               <Input
                 placeholder="Email"
-                variant="outline"
+                variant="ghost"
                 display="block"
                 mt="10px"
-                size="md"
+                size="lg"
                 color="twitter"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                
+                backgroundColor="#4c4ade"
+                borderRadius="10px"
+                boxShadow="inset 27px -27px 54px #4442c6,inset -27px 27px 54px #5452f6"
               />
               <Button
-                variant="outline"
-                size="md"
+                variant="ghost"
+                size="lg"
                 mt="10px"
-                ml="3px"
-                colorScheme="twitter"
-                onClick = {onClickSignUp}
+                ml="5px"
+
+                // colorScheme="twitter"
+                onClick={onClickSignUp}
+                backgroundColor="#4c4ade"
+                borderRadius="10px"
+                boxShadow="inset 15px -15px 66px #323193,
+                inset -15px 15px 66px #6663ff"
               >
-                SignUp
+                Sign Up
             </Button>
             </Container>
           </Container>
         </Container>
       </Container>
+
     </ChakraProvider>
   )
 }
