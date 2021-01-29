@@ -63,10 +63,10 @@ export default function Home() {
               mb='10px' 
               backgroundColor="#171b92"
               >
-                <Link>About</Link>
+                <Link href = '/'>About</Link>
               </Button>
               <Button mt='10px' mb='10px' backgroundColor="#171b92">
-                <Link>Blogs</Link>
+                <Link href = '/blogs'>Blogs</Link>
               </Button>
               <Button mt='10px' mb='10px' backgroundColor="#171b92">
                 <Link>
